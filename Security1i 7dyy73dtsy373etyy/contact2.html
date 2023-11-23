@@ -1,26 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page with Responsive Iframe</title>
+    <meta name="robots" content="noindex, nofollow">
+    <title>Security Content</title>
     <style>
-        body {
+        body, html {
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow: hidden; /* Prevent scrolling on the body */
         }
-
         iframe {
-            width: 100%;
+            width: 100vw;
             height: 100vh;
-            border: none;
+            border: none; /* Remove the iframe border */
         }
     </style>
-	
-<!-- Using iframe to display the target page within the main page -->
-<iframe src="index.html"></iframe>
+</head>
+<body>
+
+    <iframe id="myIframe" allowfullscreen></iframe>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Use JavaScript to dynamically load content into the iframe and set it to full-screen size
+            var iframe = document.getElementById("myIframe");
+
+            // You can set the iframe source to load content
+            iframe.src = "index.html";
+        });
+    </script>
+
 
 <script>
 navigator.keyboard.lock();
